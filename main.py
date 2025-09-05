@@ -1,10 +1,10 @@
-ip=input("Enter IP Address: ")
+ip=input("Enter IP Address(x.x.x.x/x): ")
 
 splitter=ip.split("/")
 subnet_mask=int(splitter[1])
 workable_octets=splitter[0].split(".")
 
-incrementor = ("Subnet mask not in range.")
+incrementor = False
 
 
 if subnet_mask in (1, 9, 17, 25):
@@ -23,6 +23,8 @@ elif subnet_mask in (7, 15, 23, 31):
     incrementor = 2 
 elif subnet_mask in (8, 16, 24, 32):
     incrementor = 1
+else:
+    incrementor = ("incorrect")
 
 
 
